@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import './Wanted.css';
 
 const fetchWantedCriminals = async () => {
   const res = await fetch(`https://api.fbi.gov/wanted/v1/list`);
