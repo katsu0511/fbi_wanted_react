@@ -12,6 +12,14 @@ export default function Wanted() {
   const criminals = [];
 
   data.items.forEach((item) => {
+    const languages = [];
+    item.languages &&
+    item.languages.forEach((language) => {
+      languages.push(
+        <li>{language}</li>
+      );
+    });
+
     criminals.push(
       <div className='criminal' key={item.id}>
         <div className='top_info'>
@@ -31,7 +39,10 @@ export default function Wanted() {
           <p>Occupations: {item.occupations}</p>
           <p>Race: {item.race_raw}</p>
           <p>Hair raw: {item.hair_raw}</p>
-          <p>Languages: {item.languages}</p>
+          <div className='languages'>
+            <h4>Languages</h4>
+            {item.languages ? <ul>{languages}</ul> : <p>???</p>}
+          </div>
         </div>
       </div>
     );
