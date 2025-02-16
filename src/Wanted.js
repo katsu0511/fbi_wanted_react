@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import './Wanted.css';
 
 const fetchWantedCriminals = async () => {
   const res = await fetch(`https://api.fbi.gov/wanted/v1/list`);
@@ -12,10 +13,26 @@ export default function Wanted() {
 
   data.items.forEach((item) => {
     criminals.push(
-      <div className='criminal' key={item.uid}>
-        <h2>{item.title}</h2>
-        <p>{item.dates_of_birth_used}</p>
-        <img src={item.images[0].large} alt={item.title} />
+      <div className='criminal' key={item.id}>
+        <div className='top_info'>
+          <div className='image_frame'>
+            <img src={item.images[0].large} alt={item.title} />
+          </div>
+          <div className='details'>
+            <h2>{item.title}</h2>
+            <p>Sex: {item.sex ? item.sex : '???'}</p>
+            <p>Date of birth: {item.dates_of_birth_used ? item.dates_of_birth_used[0] : '???'}</p>
+          </div>
+        </div>
+        <div className='other_info'>
+          <h3>Other info</h3>
+          <p>Nationality: {item.nationality}</p>
+          <p>Hair: {item.hair}</p>
+          <p>Occupations: {item.occupations}</p>
+          <p>Race: {item.race_raw}</p>
+          <p>Hair raw: {item.hair_raw}</p>
+          <p>Languages: {item.languages}</p>
+        </div>
       </div>
     );
   });
