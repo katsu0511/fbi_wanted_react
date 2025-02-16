@@ -34,11 +34,11 @@ export default function Wanted() {
         </div>
         <div className='other_info'>
           <h3>Other info</h3>
-          <p>Nationality: {item.nationality}</p>
-          <p>Hair: {item.hair}</p>
-          <p>Occupations: {item.occupations}</p>
-          <p>Race: {item.race_raw}</p>
-          <p>Hair raw: {item.hair_raw}</p>
+          <p>Nationality: {item.nationality ? item.nationality : '???'}</p>
+          <p>Hair: {item.hair ? item.hair : '???'}</p>
+          <p>Occupations: {item.occupations ? item.occupations : '???'}</p>
+          <p>Race: {item.race_raw ? item.race_raw : '???'}</p>
+          <p>Hair raw: {item.hair_raw ? item.hair_raw : '???'}</p>
           <div className='languages'>
             <h4>Languages</h4>
             {item.languages ? <ul>{languages}</ul> : <p>???</p>}
