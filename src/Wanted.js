@@ -12,10 +12,19 @@ export default function Wanted() {
 
   data.items.forEach((item) => {
     criminals.push(
-      <div className='criminal' key={item.uid}>
-        <h2>{item.title}</h2>
-        <p>{item.dates_of_birth_used}</p>
-        <img src={item.images[0].large} alt={item.title} />
+      <div className='criminal' key={item.id}>
+        <div className='top_info'>
+          <div className='image_frame'>
+            <img src={item.images[0].large} alt={item.title} />
+          </div>
+          <div className='details'>
+            <h2>{item.title}</h2>
+            <p>{item.dates_of_birth_used}</p>
+          </div>
+        </div>
+        <div className='other_info'>
+          <h3>Other info</h3>
+        </div>
       </div>
     );
   });
