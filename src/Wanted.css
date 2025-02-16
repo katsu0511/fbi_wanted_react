@@ -1,0 +1,115 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+#root {
+  background-color: antiquewhite;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+}
+
+h1 {
+  text-align: center;
+  line-height: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.criminals {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.criminal {
+  background-color: burlywood;
+  width: 380px;
+  border: solid 1px black;
+  box-sizing: border-box;
+  margin: 0 30px 30px 0;
+}
+
+.criminal:nth-child(3n) {
+  margin-right: 0;
+}
+
+.top_info {
+  display: flex;
+}
+
+.image_frame {
+  width: 163px;
+  height: 227px;
+}
+
+.image_frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  width: calc(100% - 163px);
+}
+
+.details p {
+  text-align: center;
+}
+
+h2, h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.other_info p {
+  padding-left: 20px;
+}
+
+.loading p, .error p {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: calc(100vh - 60px);
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+	main {
+    width: calc(100% - 60px);
+    margin: 0 30px;
+  }
+
+  .criminal {
+    width: calc(50% - 15px);
+  }
+
+  .criminal:nth-child(3n) {
+    margin-right: 30px;
+  }
+
+  .criminal:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .criminal {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .criminal:nth-child(3n) {
+    margin-right: 0;
+  }
+}
