@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import Wanted from './Wanted.js';
+import Loading from './Loading.js';
 
 const cli = new QueryClient({
   defaultOptions: {
@@ -17,7 +18,7 @@ function App() {
       <header>
         <h1>FBI Wanted Criminals</h1>
       </header>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loading />}>
         <ErrorBoundary fallback={<div>Error has happened.</div>}>
           <QueryClientProvider client={cli}>
             <Wanted />
