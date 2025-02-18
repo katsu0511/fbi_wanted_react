@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import Wanted from './Wanted.js';
 import Loading from './Loading.js';
+import Error from './Error.js';
 
 const cli = new QueryClient({
   defaultOptions: {
@@ -19,7 +20,7 @@ function App() {
         <h1>FBI Wanted Criminals</h1>
       </header>
       <Suspense fallback={<Loading />}>
-        <ErrorBoundary fallback={<div>Error has happened.</div>}>
+        <ErrorBoundary fallback={<Error />}>
           <QueryClientProvider client={cli}>
             <Wanted />
           </QueryClientProvider>
