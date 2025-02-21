@@ -28,8 +28,8 @@ export default function Wanted() {
           </div>
           <div className='details'>
             <h2>{item.title}</h2>
-            <p>Sex: {item.sex ? item.sex : '???'}</p>
-            <p>Date of birth: {item.dates_of_birth_used ? item.dates_of_birth_used[0] : '???'}</p>
+            {item.sex && <p>{item.sex}</p>}
+            {item.dates_of_birth_used && <p>{item.dates_of_birth_used[0]}</p>}
           </div>
         </div>
         <div className='other_info'>
